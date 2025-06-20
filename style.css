@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #001f3f;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+header img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+}
+
+.frase {
+  font-style: italic;
+  color: #aad2f5;
+}
+
+/* Navegação */
+.menu-navigation {
+  margin-top: 1rem;
+}
+
+.menu-navigation a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.3s;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu-navigation a.active {
+  color: #f5d7aa;
+  border-bottom: 2px solid #f5d7aa;
+}
+
+/* Seções */
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  color: #001f3f;
+  border-bottom: 2px solid #001f3f;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+section h2.active,
+#projetos .title.active {
+  color: #f5d7aa;
+  font-weight: 700;
+  border-bottom: none; /* linha removida no destaque */
+  padding-bottom: 0.25rem;
+}
+
+/* Projetos */
+#projetos {
+  max-width: 900px;
+  margin: 0 auto 3rem auto; /* centraliza a seção */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#projetos > header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#projetos .carrossel {
+  display: flex;
+  overflow-x: auto; /* ativa rolagem horizontal */
+  scroll-behavior: smooth; /* rolagem suave */
+  gap: 1rem;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  -webkit-overflow-scrolling: touch; /* rolagem suave iOS */
+  scrollbar-width: none; /* Firefox - esconde scrollbar */
+  width: 100%; /* ocupa toda a largura da seção */
+  scroll-snap-type: x mandatory; /* snap para as imagens */
+}
+
+#projetos .carrossel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Edge - esconde scrollbar */
+}
+
+#projetos .carrossel img {
+  height: 200px;
+  border-radius: 10px;
+  flex-shrink: 0; /* evita que encolha */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  user-select: none;
+  scroll-snap-align: start; /* snap no início da imagem */
+  object-fit: contain; /* mantém proporção e evita corte */
+}
+
+#projetos .carrossel img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Contatos */
+#contatos {
+  background-color: #001f3f;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.botao {
+  display: inline-block;
+  padding: 10px 24px;
+  margin: 8px;
+  font-size: 1rem;
+  background-color: #001f3f;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.botao:hover {
+  opacity: 0.9;
+}
+
+.botao.whatsapp {
+  background-color: #25d366;
+}
+
+.botao.linkedin {
+  background-color: #0077b5;
+}
+
+.botao.github {
+  background-color: #333;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #001f3f;
+  color: white;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #aad2f5;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+  @media (max-width: 600px) {
+      #projetos .carrossel img {
+        height: 140px;
+        max-width: 80vw;
+      }
+      main {
+        padding: 1rem;
+      }
+      #projetos {
+        padding: 0.5rem;
+      }
+      #projetos .title {
+        font-size: 1.5rem;
+      }
+    }
