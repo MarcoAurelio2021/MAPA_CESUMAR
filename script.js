@@ -1,5 +1,5 @@
 
-alert('Seja bem vindo!');
+// alert('Seja bem vindo!');
 
 document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.menu-navigation a');
