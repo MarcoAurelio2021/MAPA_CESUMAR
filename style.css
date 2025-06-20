@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -73,14 +74,14 @@ section h2.active,
 #projetos .title.active {
   color: #f5d7aa;
   font-weight: 700;
-  border-bottom: none; /* linha removida no destaque */
+  border-bottom: none;
   padding-bottom: 0.25rem;
 }
 
 /* Projetos */
 #projetos {
   max-width: 900px;
-  margin: 0 auto 3rem auto; /* centraliza a seção */
+  margin: 0 auto 3rem auto;
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -90,41 +91,62 @@ section h2.active,
   margin-bottom: 1rem;
 }
 
+#projetos .title {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #001f3f;
+  padding-bottom: 0.25rem;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: #aad2f5;
+  text-align: center;
+}
+
 #projetos .carrossel {
   display: flex;
-  overflow-x: auto; /* ativa rolagem horizontal */
-  scroll-behavior: smooth; /* rolagem suave */
+  overflow-x: auto;
+  scroll-behavior: smooth;
   gap: 1rem;
   padding: 1rem 0;
   margin-top: 1rem;
-  -webkit-overflow-scrolling: touch; /* rolagem suave iOS */
-  scrollbar-width: none; /* Firefox - esconde scrollbar */
-  width: 100%; /* ocupa toda a largura da seção */
-  scroll-snap-type: x mandatory; /* snap para as imagens */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  width: 100%;
+  scroll-snap-type: x mandatory;
 }
 
 #projetos .carrossel::-webkit-scrollbar {
-  display: none; /* Chrome, Safari e Edge - esconde scrollbar */
+  display: none;
+}
+
+#projetos .carrossel article {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  text-align: center;
 }
 
 #projetos .carrossel img {
   height: 200px;
   border-radius: 10px;
-  flex-shrink: 0; /* evita que encolha */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   cursor: pointer;
   transition: transform 0.3s ease;
   user-select: none;
-  scroll-snap-align: start; /* snap no início da imagem */
-  object-fit: contain; /* mantém proporção e evita corte */
+  object-fit: contain;
 }
 
 #projetos .carrossel img:hover {
   transform: scale(1.05);
 }
 
-
-/* Contatos */
+/* Contatos (agora <aside>) */
 #contatos {
   background-color: #001f3f;
   color: white;
@@ -180,18 +202,22 @@ footer a:hover {
   text-decoration: underline;
 }
 
-  @media (max-width: 600px) {
-      #projetos .carrossel img {
-        height: 140px;
-        max-width: 80vw;
-      }
-      main {
-        padding: 1rem;
-      }
-      #projetos {
-        padding: 0.5rem;
-      }
-      #projetos .title {
-        font-size: 1.5rem;
-      }
-    }
+/* Responsividade */
+@media (max-width: 600px) {
+  #projetos .carrossel img {
+    height: 140px;
+    max-width: 80vw;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  #projetos {
+    padding: 0.5rem;
+  }
+
+  #projetos .title {
+    font-size: 1.5rem;
+  }
+}
