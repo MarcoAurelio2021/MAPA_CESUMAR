@@ -1,5 +1,4 @@
-console.log('Script carregado com sucesso!');
-alert('Seja bem vindo!');
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.menu-navigation a');
